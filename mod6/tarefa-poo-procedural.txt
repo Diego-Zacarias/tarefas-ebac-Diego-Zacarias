@@ -1,0 +1,9 @@
+A programação procedural é um paradgma de progamação
+onde o código é executado de forma sequencial. A 
+pricípio é de fácil entendimento porém, a medida que 
+a código cresce, se torma mais complexa.
+
+Já a programação orientada a objetos é um paradgma de 
+programação que as classes e objetos para criar módulos
+reutilizáveis e que tem como motivação, melhorar a 
+modelagem de problemas do mundo real.
