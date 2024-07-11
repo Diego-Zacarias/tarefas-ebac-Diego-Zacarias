@@ -1,0 +1,1 @@
+tagSearchIndex = [{"l":"Esta classe modela um vendedor","h":"class Vendedor","d":"Section","u":"Vendedor.html#esta-classe-modela-um-vendedor-heading"}];updateSearchResults();
