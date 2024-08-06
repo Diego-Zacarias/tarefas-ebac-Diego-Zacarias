@@ -6,11 +6,14 @@ public class Pessoa {
 	private Map<Character, ArrayList<String>> pessoas = new TreeMap<Character, ArrayList<String>>();
 
 	public void imprimirPessoas() {
+		System.out.println("\n==========================\nLista dos nomes inseridos:\n==========================\n");
 		this.pessoas.forEach((sexo, nomes) -> {
-			System.out.println(sexo.equals('m') ? "Homem\t" : "Mulher\t");
+			System.out.println(sexo.equals('m') ? "-*- Homem -*-\t" : "-*- Mulher -*-\t");
 			nomes.forEach(nome -> {
 				System.out.println(nome);
 			});
+
+			System.out.println();
 		});
 	}
 
@@ -25,5 +28,4 @@ public class Pessoa {
 			this.pessoas.put(sexo, listaNomes);
 		}
 	}
-	
 }
