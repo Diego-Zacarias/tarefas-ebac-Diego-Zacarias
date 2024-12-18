@@ -1,13 +1,12 @@
 package br.com.dlima.dao;
 
-import java.util.Collection;
-
+import br.com.dlima.dao.generic.IGenericDAO;
 import br.com.dlima.domain.Cliente;
+import br.com.dlima.exceptions.DAOException;
+import br.com.dlima.exceptions.TipoChaveNaoEncontradaException;
 
-public interface IClienteDAO {
-	public Integer cadastrar(Cliente entity) throws Exception;
-	public Cliente consultar(String codigo) throws Exception;
-	public Integer excluir(String id) throws Exception;
-	public Integer alterar(Cliente newEntity, String oldId) throws Exception;
-	public Collection<Cliente> buscarTodos() throws Exception;
+public interface IClienteDAO extends IGenericDAO<Cliente, Long> {
+	public void ativarCliente(Cliente entity) throws TipoChaveNaoEncontradaException, DAOException;
+	public void inativarCliente(Cliente entity) throws TipoChaveNaoEncontradaException, DAOException;
+	public void inadimplente(Cliente entity) throws TipoChaveNaoEncontradaException, DAOException;
 }

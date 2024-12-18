@@ -1,28 +1,72 @@
 package br.com.dlima.domain;
 
-import java.util.Date;
+import java.math.BigDecimal;
 
-public class Produto extends Entity {
+import br.com.dlima.annotation.ColunaTabela;
+import br.com.dlima.annotation.Tabela;
+import br.com.dlima.annotation.TipoChave;
+
+@Tabela("TB_PRODUTO")
+public class Produto implements Persistente{
+	
+	@ColunaTabela(dbName = "id", setJavaName = "setId")
+	private Long id;
+	
+	@ColunaTabela(dbName = "nome", setJavaName = "setNome")
 	private String nome;
-	private Integer quantidade;
-	private Date dataCadastro;
+	
+	@TipoChave("getCodigo")
+	@ColunaTabela(dbName = "codigo", setJavaName = "setCodigo")
+	private String codigo;
+	
+	@ColunaTabela(dbName = "descricao", setJavaName = "setDescricao")
+	private String descricao;
+	
+	@ColunaTabela(dbName = "valor", setJavaName = "setValor")
+	private BigDecimal valor;
+	
+	@ColunaTabela(dbName = "aliquota_icms", setJavaName = "setAliquotaIcms")
+	private BigDecimal aliquotaIcms;
+	
+	public BigDecimal getAliquotaIcms() {
+		return aliquotaIcms;
+	}
+	public void setAliquotaIcms(BigDecimal aliquotaIcms) {
+		this.aliquotaIcms = aliquotaIcms;
+	}
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Integer getQuantidade() {
-		return quantidade;
+	public String getCodigo() {
+		return codigo;
 	}
-	public void setQuantidade(Integer quantidade) {
-		this.quantidade = quantidade;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
-	public Date getDataCadastro() {
-		return dataCadastro;
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setDataCadastro(Date dataCadastro) {
-		this.dataCadastro = dataCadastro;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public BigDecimal getValor() {
+		return valor;
+	}
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
+	}
+	@Override
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void setId(Long id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
