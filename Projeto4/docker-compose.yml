@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  ebac-postgres-compose:
+    image: postgres
+    container_name: vendas_online
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "admin"
+    ports:
+      - "15432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+      - postgres-ebac-network
+
+  ebac-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "diego.z.s.de.lima@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "16543:80"
+    depends_on:
+      - ebac-postgres-compose
+    networks:
+      - postgres-ebac-network
+
+networks:
+  postgres-ebac-network:
+    driver: bridge
