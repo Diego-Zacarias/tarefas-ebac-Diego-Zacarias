@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
 import br.com.dlima.domain.Curso;
 
 /**
- * 
+ * @author diego
  */
 public class CursoDAO implements ICursoDAO {
 
